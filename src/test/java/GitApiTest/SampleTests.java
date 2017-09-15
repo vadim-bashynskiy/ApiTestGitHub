@@ -32,7 +32,7 @@ public class SampleTests {
     @Test
     public void findCommit(){
         String shaCommit = "b16b0bb5cb7e43d68866cb5f4edb6fb09d788c76";
-        JsonNode node = restTemplate.getForObject(ApiBase + "/repos/vadim-bashynskiy/javacore/commits/b16b0bb5cb7e43d68866cb5f4edb6fb09d788c76", JsonNode.class);
+        JsonNode node = restTemplate.getForObject(ApiBase + "/repos/vadim-bashynskiy/javacore/commits/" + shaCommit, JsonNode.class);
         assertTrue(node.get("sha").toString().replaceAll("\"","").equals(shaCommit));
     }
     @Test
